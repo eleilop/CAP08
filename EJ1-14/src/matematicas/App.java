@@ -71,10 +71,29 @@ public class App {/*
     public static int digitoN() {}
     public static int posicionDeDigito() {}
     public static long quitaPorDetras() {}
-    public static long quitaPorDelante() {}
-    public static long pegaPorDetras() {}
-    public static long pegaPorDelante() {}
-    public static long trozoDeNumero() {}*/
+    public static long quitaPorDelante() {}*/
+
+    /**
+     * Añade un dígito a un número por detrás.
+     * @param digito Digito a añadir.
+     * @param numero Numero al que añadir el digito.
+     * @return El número con el dígito detrás.
+     */
+    public static long pegaPorDetras(int digito, long numero) {
+        return juntaNumeros(digito, numero);
+    }
+
+    /**
+     * Añade un dígito a un número por detrás.
+     * @param numero Numero al que añadir el digito.
+     * @param digito Digito a añadir.
+     * @return El número con el dígito delante.
+     */
+    public static long pegaPorDelante(long numero, int digito) {
+        return juntaNumeros(numero, digito);
+    }
+
+    /*public static long trozoDeNumero() {}*/
 
     /**
      * Pega dos números para formar uno.
@@ -82,8 +101,9 @@ public class App {/*
      * @param y Segundo número.
      * @return Primer y segundo número juntos.
      */
-    public static long juntaNumeros(int x, int y) {
-        
+    public static long juntaNumeros(long x, long y) {
+        x = x*potencia(10, digitos(y));
+        return x+y;
     } 
     public static void main(String[] args) throws Exception {
         
